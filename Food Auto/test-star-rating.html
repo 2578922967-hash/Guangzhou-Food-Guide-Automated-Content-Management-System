@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星级评分测试</title>
+  <style>
+    .star-icon.star-half {
+      position: relative;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1;
+      vertical-align: baseline;
+      font-size: 24px;
+    }
+
+    .star-half-empty {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1em;
+      height: 1em;
+      line-height: 1;
+      color: #d1d5db;
+      opacity: 0.4;
+      display: block;
+      z-index: 1;
+    }
+
+    .star-half-full {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1em;
+      height: 1em;
+      line-height: 1;
+      color: #fbbf24;
+      display: block;
+      z-index: 2;
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+      -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+      filter: drop-shadow(0 1px 2px rgba(251, 191, 36, 0.3));
+    }
+
+    .star-half-full::before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1em;
+      height: 1em;
+      line-height: 1;
+      display: block;
+    }
+
+    .star-icon.star-full {
+      color: #fbbf24;
+      font-size: 24px;
+    }
+
+    .star-icon.star-empty {
+      color: #d1d5db;
+      opacity: 0.4;
+      font-size: 24px;
+    }
+
+    .test-container {
+      padding: 20px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h2>星级评分测试</h2>
+    <p>五星：<span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-full">★</span></p>
+    <p>准五星（4.5星）：<span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-half"><span class="star-half-empty">☆</span><span class="star-half-full"></span></span></p>
+    <p>四星：<span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-empty">☆</span></p>
+    <p>准四星（3.5星）：<span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-full">★</span><span class="star-icon star-half"><span class="star-half-empty">☆</span><span class="star-half-full"></span></span><span class="star-icon star-empty">☆</span></p>
+  </div>
+</body>
+</html>
